@@ -25,7 +25,7 @@ protected:
 	USpringArmComponent* SpringArmComponent = nullptr;
 
 	UPROPERTY(VisibleAnywhere)
-	UCameraComponent* CameraComponent = nullptr;
+	UCameraComponent* CameraComponent = nullptr;	
 	
 
 public:	
@@ -34,6 +34,8 @@ public:
 
 	void MoveForward(float Value);
 	void MoveRight(float Value);
+
+	void PrimaryAttack();
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 

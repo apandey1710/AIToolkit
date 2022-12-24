@@ -79,6 +79,11 @@ void AAITPlayerCharacter::MoveRight(float Value)
 	AddMovementInput(RightVector, Value);
 }
 
+void AAITPlayerCharacter::PrimaryAttack()
+{
+	
+}
+
 // Called to bind functionality to input
 void AAITPlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -89,8 +94,8 @@ void AAITPlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInput
 
 	PlayerInputComponent->BindAxis("Turn", this, &APawn::AddControllerYawInput);
 	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
-	
-	
+
+	PlayerInputComponent->BindAction("PrimaryAttack", IE_Pressed, this, &AAITPlayerCharacter::PrimaryAttack);
 
 }
 
