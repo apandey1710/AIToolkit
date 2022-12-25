@@ -4,6 +4,7 @@
 #include "Camera/CameraComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "AITUtilities.h"
 
 // Sets default values
 AAITPlayerCharacter::AAITPlayerCharacter()
@@ -47,7 +48,7 @@ void AAITPlayerCharacter::Tick(float DeltaTime)
 
 	FVector ActorDirection_LineEnd = LineStart + (GetActorForwardVector() * 100.0f);
 	DrawDebugDirectionalArrow(GetWorld(), LineStart, ActorDirection_LineEnd, DrawScale, FColor::Emerald, false, 0.0f, 0, Thickness);
-
+	
 	FVector ControllerDirection_LineEnd = LineStart + (GetControlRotation().Vector() * 100.0f);
 	DrawDebugDirectionalArrow(GetWorld(), LineStart, ControllerDirection_LineEnd, DrawScale, FColor::Green, false, 0.0f, 0, Thickness);
 }
